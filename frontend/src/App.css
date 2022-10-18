@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
+
+body {
+    background-color: #2A2E30;
+}
+
+p {
+    color: white;
+
+}
+
+.home-header {
+    text-align: center;
+    color: white;
+}
+
+#Layer_1 {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: auto;
+    height: 60px;
+    cursor: pointer;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* .container {
+    background-color: #555859;
+    border-radius: 0.25rem;
+    width: 139px;
+    height: auto;
+    margin: 0.5rem 0.5rem 0.4rem 0.5rem;
+    padding: 1rem; 
+    width: 8rem;
+    padding: 2rem 1rem;
+    margin: 0.5rem 0;
+}
+
+.container h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #888A8A;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.2rem;
+} */
+
+.container {
+    margin: 20px;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 20rem;
+}
+
+.card-image {
+    flex-direction: row;
+    /* width: 120px;
+    height: 80px; */
+    width: 200px;
+    height: 200px;
+    background-color: #555859;
+    display: flex;
+    justify-content: space-around;
+    margin: 0.5rem 0rem;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 250ms;
+    cursor: pointer;
+}
+
+.card-image:hover {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
+}
+
+span.btn {
+    font-size: 1.5rem;
+    position: relative;
+    margin-left: 85%;
+    height: 0;
+    cursor: pointer;
+    color: white;
+}
+
+.camera-lens {
+    position: fixed;
+    top: 10px;
+    right: 0;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+
+/* CSS till Home.jsx */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    margin: 1rem 0;
+}
+
+h1,
+h3 {
+    text-align: center;
+    color: #999B9B;
+}
+
+section {
+    width: auto;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.form__input {
+    margin: 0.7rem 0;
+    outline: none;
+    border: 1px solid #999B9B;
+    background-color: transparent;
+    border-radius: 4px;
+    padding: 0.5rem;
+    color: #999B9B;
+    font-size: 1rem;
+}
+
+#create-button {
+    background-color: transparent;
+    padding: 0.75rem;
+    margin: 1rem 0;
+    color: #999B9B;
+    border: 1px solid #999B9B;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 250ms;
+}
+
+#create-button:hover {
+    background-color: #999B9B;
+    color: #2a2e30;
+}
+
+input {
+    width: 16rem;
+}
+
+#create-account {
+    border-bottom: 0.5px solid gray;
+}
+
+#login-button {
+    background-color: transparent;
+    padding: 0.75rem;
+    margin: 1rem 0;
+    color: #999B9B;
+    border: 1px solid #999B9B;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 250ms;
+}
+
+#login-button:hover {
+    background-color: #999B9B;
+    color: #2a2e30;
+}
+
+
+/* CSS till Home.jsx */
+
+/* CSS till Media.jsx */
+
+.grid-icon {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.application {
+    min-height: 100vh;
+    position: relative;
+    background-color: #313131;
+}
+
+.camera {
+    position: relative;
+}
+
+.result {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 1);
+    transition: 0.4s;
+}
+
+.nice-picture {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 18rem;
+    font-size: 22px;
+    color: white;
+}
+
+canvas {
+    max-height: 50vh;
+    height: auto;
+    width: 100vw;
+}
+
+.result.hasPhoto {
+    left: 0;
+}
+
+video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    z-index: 1;
+}
+
+.phototaker,
+.close-photo {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+
+    appearance: none;
+    border: none;
+    outline: none;
+
+    padding: 4px 8px;
+    background-image: linear-gradient(to right, #844FFF 50%, #FF4F84 50%);
+    background-position: 0%;
+    background-size: 200%;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 700;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.phototaker:hover,
+.close-photo:hover {
+    background-position: 100%;
+}
+
+/* CSS till Media.jsx */
