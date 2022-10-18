@@ -48,7 +48,6 @@ app.post('/signup', async (request, response) => {
         console.log("Ditt konto kunde inte skapas!")
         resObj.success = false;
     } else {
-        //Skapa ett objekt med nyklarna username, email, password, admin
         const newUserObject = {
             username: credentials.username,
             email: credentials.email,
@@ -94,16 +93,16 @@ app.post('/getimages', async (request, response) => {
     // ta in bilderna som hör till användaren som är inloggad
     const userId = request.body.username;
 
-    //Hitta och spara användaren
+    // hitta och spara användaren
     const user = await accounts.findOne({
         username: userId
     });
 
-    //Om användaren är admin, hämta alla bilder
+    // om användaren är admin, hämta alla bilder
     if (user.admin) {
         imgs = await images.find({})
     } else {
-        //Annars hämta bara användarens
+        // annars hämta bara användarens
         imgs = await images.find({
             userId
         });
@@ -129,7 +128,6 @@ app.post('/postimages', async (request, response) => {
     let imgToAdd = {
         userId: request.body.username,
         img: request.body.img,
-        //Räcker så för att den kommer skapa _id automatiskt | Alright, låter ju bra. Tusen tack!
     }
     await images.insert(imgToAdd);
 

@@ -4,10 +4,10 @@ import { useLocation, useNavigate } from "react-router-dom";
 function LoggedIn() {
     const location = useLocation();
     const navigate = useNavigate();
-    //hämta alla bilder som användaren tagit
+    // hämta alla bilder som användaren tagit
     const [images, setImages] = useState();
     const user = location.state.user;
-    //om du är en admin, då ska vi hämta alla bilder som alla tagit
+    // om du är en admin, då ska vi hämta alla bilder som alla tagit
     
     async function getAllImages() {
         console.log(`Välkommen tillbaks, ${location.state.user}.`);
@@ -15,7 +15,7 @@ function LoggedIn() {
           const userObj = {
             username: user
           };
-          //kalla på vårt api för att få alla bilder länkade till användaren
+          // kalla på vårt api för att få alla bilder länkade till användaren
           const response = await fetch("http://localhost:5000/getimages", {
             method: "POST",
             body: JSON.stringify(userObj),
@@ -47,8 +47,6 @@ function LoggedIn() {
 
       getAllImages();
     }
-    // Nu loggar den inte massa tomma arrays hela tiden!
-    //OK nu kollar vi på servern också | Yes!
     useEffect(() => {
         if (!images) {
             getAllImages();
